@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>筱葳學測｜學習入口</title>
+<meta name="description" content="筱葳的學測讀書入口：國文寫作、英文、數學（數A／數B）、歷史、地理、公民。">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#F1F4F8; --surface:#FFFFFF; --surface-2:#E7EDF4;
+    --ink:#1E2A38; --ink-muted:#5B6B7C; --line:#CBD6E1;
+    --accent:#2A5DA8; --accent-ink:#FFFFFF; --accent-soft:#DEE9F6;
+    --c-chinese:#B4472F; --c-english:#2F7568; --c-math:#2A5DA8;
+    --c-history:#8A5A12; --c-geo:#3C7A2E; --c-civics:#6A4FA3;
+    --grid-line: rgba(42,93,168,0.07);
+    --shadow: 0 1px 2px rgba(30,42,56,0.06), 0 8px 24px rgba(30,42,56,0.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0F1621; --surface:#17202D; --surface-2:#1C2634;
+      --ink:#E7ECF3; --ink-muted:#93A2B4; --line:#2B3648;
+      --accent:#86AEE6; --accent-ink:#0B1521; --accent-soft:#20304A;
+      --c-chinese:#EE9A84; --c-english:#6CC0AD; --c-math:#86AEE6;
+      --c-history:#E0B266; --c-geo:#8FCB7E; --c-civics:#B9A3EA;
+      --grid-line: rgba(134,174,230,0.07);
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0F1621; --surface:#17202D; --surface-2:#1C2634;
+    --ink:#E7ECF3; --ink-muted:#93A2B4; --line:#2B3648;
+    --accent:#86AEE6; --accent-ink:#0B1521; --accent-soft:#20304A;
+    --c-chinese:#EE9A84; --c-english:#6CC0AD; --c-math:#86AEE6;
+    --c-history:#E0B266; --c-geo:#8FCB7E; --c-civics:#B9A3EA;
+    --grid-line: rgba(134,174,230,0.07);
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0; color:var(--ink);
+    background:
+      repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 32px),
+      var(--bg);
+    font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;
+    font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{ font-family:'Noto Serif TC','Songti TC','PMingLiU',serif; font-weight:600; margin:0; text-wrap:balance; }
+  .page{ max-width:960px; margin:0 auto; padding:0 1rem 4rem; }
+
+  .hero{ padding:3.4rem 0 1.6rem; display:grid; grid-template-columns:1fr auto; gap:1.5rem 2rem; align-items:end; }
+  .eyebrow{ display:inline-block; font-family:'JetBrains Mono',monospace; font-size:0.78rem; letter-spacing:0.06em; color:var(--accent); background:var(--accent-soft); border:1px solid var(--line); padding:0.3rem 0.7rem; border-radius:4px; margin-bottom:1rem; }
+  .hero h1{ font-size:clamp(2rem,6vw,2.8rem); line-height:1.2; margin-bottom:0.7rem; }
+  .hero p{ margin:0; color:var(--ink-muted); max-width:560px; }
+  .countdown{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:1rem 1.3rem; box-shadow:var(--shadow); text-align:right; min-width:200px; }
+  .countdown .label{ font-size:0.82rem; color:var(--ink-muted); }
+  .countdown .days{ font-family:'JetBrains Mono',monospace; font-size:2.6rem; font-weight:700; color:var(--accent); line-height:1.1; font-variant-numeric:tabular-nums; }
+  .countdown .days small{ font-size:1rem; font-weight:500; color:var(--ink-muted); margin-left:0.2rem; }
+  .countdown .date{ font-size:0.8rem; color:var(--ink-muted); }
+
+  .group-title{ display:flex; align-items:baseline; gap:0.8rem; margin:2.2rem 0 0.9rem; }
+  .group-title h2{ font-size:1.25rem; }
+  .group-title span{ font-size:0.85rem; color:var(--ink-muted); }
+
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:1rem; }
+  .card{
+    --c:var(--accent);
+    position:relative; display:flex; flex-direction:column; gap:0.7rem;
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:1.2rem 1.3rem 1.1rem; box-shadow:var(--shadow);
+    border-top:4px solid var(--c);
+    text-decoration:none; color:inherit;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  a.card:hover{ transform:translateY(-2px); box-shadow:0 2px 4px rgba(30,42,56,0.08), 0 14px 30px rgba(30,42,56,0.1); }
+  a.card:focus-visible, .sub-links a:focus-visible{ outline:2px solid var(--c); outline-offset:3px; }
+  .card .head{ display:flex; align-items:center; gap:0.75rem; }
+  .card .glyph{ width:44px; height:44px; flex:none; border-radius:10px; display:grid; place-items:center; font-family:'Noto Serif TC',serif; font-weight:700; font-size:1.35rem; color:var(--c); background:var(--surface-2); border:1px solid var(--line); }
+  .card h3{ font-size:1.2rem; }
+  .card .kicker{ font-size:0.78rem; color:var(--ink-muted); }
+  .card p{ margin:0; font-size:0.93rem; color:var(--ink-muted); }
+  .chips{ display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:auto; }
+  .chip{ font-family:'JetBrains Mono',monospace; font-size:0.74rem; padding:0.18rem 0.55rem; border-radius:999px; background:var(--surface-2); border:1px solid var(--line); color:var(--ink); font-variant-numeric:tabular-nums; }
+  .go{ font-size:0.9rem; font-weight:700; color:var(--c); }
+
+  .card.math{ grid-column:1 / -1; }
+  .sub-links{ display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin-top:0.2rem; }
+  .sub-links a{ display:block; text-decoration:none; color:var(--ink); background:var(--surface-2); border:1px solid var(--line); border-radius:9px; padding:0.75rem 0.9rem; transition:border-color .15s ease; }
+  .sub-links a:hover{ border-color:var(--c); }
+  .sub-links b{ display:block; font-size:1.02rem; color:var(--c); }
+  .sub-links span{ font-size:0.82rem; color:var(--ink-muted); }
+
+  .c-chinese{ --c:var(--c-chinese); } .c-english{ --c:var(--c-english); } .c-math{ --c:var(--c-math); }
+  .c-history{ --c:var(--c-history); } .c-geo{ --c:var(--c-geo); } .c-civics{ --c:var(--c-civics); }
+
+  .tips{ margin-top:2.4rem; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:1rem 1.3rem; font-size:0.9rem; color:var(--ink-muted); }
+  .tips b{ color:var(--ink); }
+  footer{ margin-top:2rem; padding-top:1.2rem; border-top:1px solid var(--line); font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:var(--ink-muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; }
+
+  @media (max-width:640px){
+    .hero{ grid-template-columns:1fr; padding-top:2.4rem; }
+    .countdown{ text-align:left; }
+    .card.math{ grid-column:auto; }
+    .sub-links{ grid-template-columns:1fr; }
+  }
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div>
+      <span class="eyebrow">筱葳學測・116 學年度</span>
+      <h1>學習入口</h1>
+      <p>六個科目的學習地圖都在這裡。每一科都有讀書進度、教材與練習題，點卡片進入該科的地圖。</p>
+    </div>
+    <div class="countdown" aria-live="polite">
+      <div class="label">距離學測第一天</div>
+      <div class="days"><span id="days">—</span><small>天</small></div>
+      <div class="date">2027／1／22（以大考中心公告為準）</div>
+    </div>
+  </header>
+
+  <div class="group-title"><h2>語文</h2><span>國文寫作・英文</span></div>
+  <div class="grid">
+    <a class="card c-chinese" href="https://yijenfeng.github.io/Chinese-Writing-Section-of-the-GSAT-2027/">
+      <div class="head"><div class="glyph" aria-hidden="true">寫</div><div><h3>國文寫作</h3><div class="kicker">國寫學習地圖</div></div></div>
+      <p>從歷屆題目看懂題型，用模板寫出結構，用自己的經驗素材填滿內容。</p>
+      <div class="chips"><span class="chip">9 個單元</span><span class="chip">8 種題型模板</span><span class="chip">10 年歷屆</span></div>
+      <span class="go">進入國寫 →</span>
+    </a>
+    <a class="card c-english" href="https://yijenfeng.github.io/xiaowei-english/">
+      <div class="head"><div class="glyph" aria-hidden="true">E</div><div><h3>英文</h3><div class="kicker">英文學習地圖</div></div></div>
+      <p>字彙文法打底，再逐一練熟選擇、混合、非選題型，附 7000 單字學習區。</p>
+      <div class="chips"><span class="chip">25 個主題</span><span class="chip">106 題練習</span><span class="chip">7000 單字</span></div>
+      <span class="go">進入英文 →</span>
+    </a>
+  </div>
+
+  <div class="group-title"><h2>數學</h2><span>依考科選擇數A 或數B</span></div>
+  <div class="grid">
+    <div class="card math c-math">
+      <div class="head"><div class="glyph" aria-hidden="true">∑</div><div><h3>數學</h3><div class="kicker">生活情境教材</div></div></div>
+      <p>每一節從生活情境出發推出公式，附工具箱整理與參考答案。數學1、2 兩者共用。</p>
+      <div class="sub-links">
+        <a href="https://yijenfeng.github.io/xiaowei-math/"><b>數A 學習地圖 →</b><span>數學1・數學2・3A・4A，共 43 小節</span></a>
+        <a href="https://yijenfeng.github.io/xiaowei-math/%E6%95%B8B/index.html"><b>數B 學習地圖 →</b><span>數學1・數學2・3B・4B，共 36 小節</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-title"><h2>社會</h2><span>歷史・地理・公民，各 14 週、每週 3 小時</span></div>
+  <div class="grid">
+    <a class="card c-history" href="https://yijenfeng.github.io/xiaowei-history/">
+      <div class="head"><div class="glyph" aria-hidden="true">史</div><div><h3>歷史</h3><div class="kicker">歷史學習地圖</div></div></div>
+      <p>先練史料判讀，再依序讀台灣史、東亞史、世界史，最後歷屆實戰。</p>
+      <div class="chips"><span class="chip">15 個主題</span><span class="chip">75 題練習</span></div>
+      <span class="go">進入歷史 →</span>
+    </a>
+    <a class="card c-geo" href="https://yijenfeng.github.io/xiaowei-geography/">
+      <div class="head"><div class="glyph" aria-hidden="true">地</div><div><h3>地理</h3><div class="kicker">地理學習地圖</div></div></div>
+      <p>地圖判讀、自然與人文地理、世界區域，附常考國家、世界地圖與氣候圖速查。</p>
+      <div class="chips"><span class="chip">18 個主題</span><span class="chip">86 題練習</span><span class="chip">14 個常考國家</span></div>
+      <span class="go">進入地理 →</span>
+    </a>
+    <a class="card c-civics" href="https://yijenfeng.github.io/xiaowei-civics/">
+      <div class="head"><div class="glyph" aria-hidden="true">公</div><div><h3>公民</h3><div class="kicker">公民學習地圖</div></div></div>
+      <p>社會、政治、法律、經濟四大塊，每週一個單元，附概念速查與錯題本。</p>
+      <div class="chips"><span class="chip">17 個主題</span><span class="chip">100 題練習</span><span class="chip">62 個概念</span></div>
+      <span class="go">進入公民 →</span>
+    </a>
+  </div>
+
+  <div class="tips">
+    <b>小提醒：</b>各科地圖的「已讀」進度存在這台裝置的瀏覽器裡。換手機或電腦讀書時，進度不會跟著過去。
+  </div>
+
+  <footer>
+    <span>筱葳學測</span>
+    <span>國寫・英文・數學・歷史・地理・公民</span>
+  </footer>
+
+</div>
+<script>
+  (function () {
+    var exam = new Date(2027, 0, 22);
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var d = Math.round((exam - today) / 86400000);
+    var el = document.getElementById('days');
+    if (d > 0) { el.textContent = d; }
+    else if (d === 0) { el.textContent = '今天'; el.nextElementSibling.textContent = ''; }
+    else { el.textContent = '已結束'; el.nextElementSibling.textContent = ''; }
+  })();
+</script>
+</body>
+</html>
